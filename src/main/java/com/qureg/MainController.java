@@ -2,6 +2,9 @@ package com.qureg;
 
 
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -47,6 +50,7 @@ public class MainController implements Initializable {
                         .or(Bindings.createBooleanBinding(() -> info.getText().trim().isEmpty(), info.textProperty()))
                         .or(Bindings.createBooleanBinding(() -> card_id.getText().trim().isEmpty(), card_id.textProperty()))
         );
+        delBtn.disableProperty().bind(lvMain.getSelectionModel().selectedItemProperty().isNull());
     }
 
     @FXML
@@ -55,5 +59,10 @@ public class MainController implements Initializable {
         DBConnector dc = DBConnector.getDC();
         lvMain.getItems().clear();
         lvMain.getItems().addAll(dc.getPeopleList());
+    }
+
+    @FXML
+    private void handleDelBtnAction(ActionEvent event) {
+        lvMain.getItems().remove(lvMain.getSelectionModel().getSelectedItem());
     }
 }
