@@ -6,7 +6,8 @@ App helps to control the online queue to offices in our university. Main functio
 ![Menu Illustration](https://github.com/adilism48/QuReg-finale21/blob/main/image/gitscreen.PNG)
 
 # Functionality video
-unknown
+ - https://youtu.be/-14_9O5T4kg
+
 
 # Used libraries
  - JavaFX 17.0.1
