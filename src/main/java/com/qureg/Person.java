@@ -62,6 +62,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return id.get() + "|" + " " + card_id.get() + " " + firstname.get() + " " + surname.get() + " " + "(" + info.get() + ")";
+        return id.get() + " ⠀" + "  " + card_id.get() + "      " + firstname.get() + " " + surname.get() + " " + "(" + info.get() + ")";
     }
 }

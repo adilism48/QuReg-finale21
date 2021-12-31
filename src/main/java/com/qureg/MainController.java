@@ -5,16 +5,16 @@ import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 public class MainController implements Initializable {
+    @FXML
+    private Label mainLabel;
+
     @FXML
     private TextField card_id;
 
@@ -61,7 +61,7 @@ public class MainController implements Initializable {
     @FXML
     private void handleDelBtnAction(ActionEvent event) {
         String sId = String.valueOf(lvMain.getSelectionModel().getSelectedItem());
-        String newSID = sId.substring(0, sId.indexOf("|"));
+        String newSID = sId.substring(0, sId.indexOf(" ⠀"));
         Integer intID = Integer.parseInt(newSID);
         DBConnector.delFromDB(intID);
 

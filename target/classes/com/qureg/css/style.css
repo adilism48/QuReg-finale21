@@ -1,8 +1,19 @@
 .button {
     -fx-background-color: #d8dfea;
     -fx-text-fill: #222b45;
+    -fx-font-size: 18;
 }
 
 .button:hover {
     -fx-text-fill: #1286c5;
+}
+
+.list-view {
+    -fx-font-size: 18;
+}
+
+#mainLabel {
+    -fx-text-fill: #222b45;
+    -fx-font-family: Arial;
+    -fx-font-size: 30;
 }
