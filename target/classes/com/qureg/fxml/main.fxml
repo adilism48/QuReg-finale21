@@ -113,14 +113,6 @@
                         <Insets left="80.0" />
                      </padding>
                   </Label>
-                  <Label layoutX="126.0" layoutY="20.0" text="Info">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="60.0" />
-                     </padding>
-                  </Label>
                </children>
             </HBox>
             <ListView fx:id="lvMain" prefHeight="460.0" prefWidth="200.0" />
