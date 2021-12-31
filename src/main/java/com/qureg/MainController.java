@@ -1,6 +1,7 @@
 package com.qureg;
 
 
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,6 +40,13 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBConnector dc = DBConnector.getDC();
         lvMain.getItems().addAll(dc.getPeopleList());
+        regBtn.disableProperty().bind(
+                Bindings.createBooleanBinding( () -> firstname.getText().trim().isEmpty(), firstname.textProperty()
+                )
+                        .or(Bindings.createBooleanBinding(() -> surname.getText().trim().isEmpty(), surname.textProperty()))
+                        .or(Bindings.createBooleanBinding(() -> info.getText().trim().isEmpty(), info.textProperty()))
+                        .or(Bindings.createBooleanBinding(() -> card_id.getText().trim().isEmpty(), card_id.textProperty()))
+        );
     }
 
     @FXML
