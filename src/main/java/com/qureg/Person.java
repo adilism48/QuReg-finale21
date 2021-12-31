@@ -6,10 +6,19 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Person {
+    private final IntegerProperty id = new SimpleIntegerProperty(this, "id");
     private final IntegerProperty card_id = new SimpleIntegerProperty(this, "card_id");
     private final StringProperty firstname = new SimpleStringProperty(this, "firstname");
     private final StringProperty surname = new SimpleStringProperty(this, "surname");
     private final StringProperty info = new SimpleStringProperty(this, "info");
+
+    public Integer id() {
+        return id.get();
+    }
+
+    public void setId(Integer id) {
+        this.id.set(id);
+    }
 
     public Integer getCard_id() {
         return card_id.get();
@@ -43,7 +52,8 @@ public class Person {
         this.info.set(info);
     }
 
-    public Person(Integer card_id, String firstname, String surname, String info) {
+    public Person(Integer id, Integer card_id, String firstname, String surname, String info) {
+        setId(id);
         setCard_id(card_id);
         setFirstname(firstname);
         setSurname(surname);
@@ -52,6 +62,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return card_id.get() + " " + firstname.get() + " " + surname.get() + " " + "(" + info.get() + ")";
+        return id.get() + "|" + " " + card_id.get() + " " + firstname.get() + " " + surname.get() + " " + "(" + info.get() + ")";
     }
 }

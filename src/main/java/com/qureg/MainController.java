@@ -2,9 +2,6 @@ package com.qureg;
 
 
 import javafx.beans.binding.Bindings;
-import javafx.beans.value.ChangeListener;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,6 +60,14 @@ public class MainController implements Initializable {
 
     @FXML
     private void handleDelBtnAction(ActionEvent event) {
-        lvMain.getItems().remove(lvMain.getSelectionModel().getSelectedItem());
+        String sId = String.valueOf(lvMain.getSelectionModel().getSelectedItem());
+        String newSID = sId.substring(0, sId.indexOf("|"));
+        Integer intID = Integer.parseInt(newSID);
+        DBConnector.delFromDB(intID);
+
+        DBConnector dc = DBConnector.getDC();
+
+        lvMain.getItems().clear();
+        lvMain.getItems().addAll(dc.getPeopleList());
     }
 }

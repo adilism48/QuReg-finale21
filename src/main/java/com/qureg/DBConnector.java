@@ -20,13 +20,27 @@ public class DBConnector {
         String query = "INSERT INTO people(card_id, firstname, surname, info) VALUES(?, ?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(DBUrl, DBUser, DBPassword);
-            PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, card_id);
             preparedStatement.setString(2, firstname);
             preparedStatement.setString(3, surname);
             preparedStatement.setString(4, info);
             preparedStatement.executeUpdate();
             System.out.println("Successfully wrote");
+        } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DBConnector.class.getName());
+            logger.log(Level.SEVERE, e.getMessage(), e);
+        }
+    }
+
+    public static void delFromDB(Integer id) {
+        String query = "DELETE FROM people WHERE id = ?";
+
+        try (Connection connection = DriverManager.getConnection(DBUrl, DBUser, DBPassword);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Deleted");
         } catch (SQLException e) {
             Logger logger = Logger.getLogger(DBConnector.class.getName());
             logger.log(Level.SEVERE, e.getMessage(), e);
@@ -42,12 +56,13 @@ public class DBConnector {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query)) {
             while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
                 Integer card_id = resultSet.getInt("card_id");
                 String firstname = resultSet.getString("firstname");
                 String surname = resultSet.getString("surname");
                 String info = resultSet.getString("info");
 
-                Person person = new Person(card_id, firstname, surname, info);
+                Person person = new Person(id, card_id, firstname, surname, info);
                 personList.add(person);
             }
             System.out.println("Successfully updated");
