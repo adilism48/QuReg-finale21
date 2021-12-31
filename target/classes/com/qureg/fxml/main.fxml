@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="900.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qureg.MainController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #222b45;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true" x="30.0">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label prefHeight="60.0" prefWidth="110.0" style="-fx-text-fill: white;" text="QuReg">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #d8dfea;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="20.0" prefWidth="350.0" />
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="350.0" text="Queue registration" />
+            <GridPane prefHeight="200.0" prefWidth="350.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="50.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="card_id" prefHeight="30.0" prefWidth="200.0" promptText="Card ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="firstname" prefHeight="30.0" promptText="Firstname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="surname" prefHeight="30.0" promptText="Surname" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextArea fx:id="info" promptText="Short information about" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button fx:id="regBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleRegBtnAction" prefHeight="30.0" prefWidth="100.0" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="delBtn" alignment="CENTER" layoutX="125.0" layoutY="35.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Delete" />
+                        <Label layoutX="125.0" layoutY="-1.0" prefHeight="30.0" prefWidth="100.0" text="Delete from list" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <ListView fx:id="lvMain" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
