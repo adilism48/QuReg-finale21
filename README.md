@@ -5,13 +5,12 @@ App helps to control the online queue to offices in our university. Main functio
 
 ![Menu Illustration](https://github.com/adilism48/QuReg-finale21/blob/main/image/gitscreen.PNG)
 
-# Used libraries
- - JavaFX 17.0.1
- - PostgreSQL JDBC Driver 42.3.1
-
 # Functionality video
 unknown
 
+# Used libraries
+ - JavaFX 17.0.1
+ - PostgreSQL JDBC Driver 42.3.1
 ###### *I made that app using `Intellij IDEA` and that IDE build that app automatically and libraries load by `Maven`.*
 
 # Made by
