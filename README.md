@@ -14,5 +14,8 @@ App helps to control the online queue to offices in our university. Main functio
  - PostgreSQL JDBC Driver 42.3.1
 ###### *I made that app using `Intellij IDEA` and that IDE build that app automatically and libraries load by `Maven`.*
 
+# Feedbacks
+
 # Made by
 Adil Ismailov
+Abdulaziz Talantbek uulu
