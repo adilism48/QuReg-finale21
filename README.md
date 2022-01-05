@@ -18,4 +18,5 @@ App helps to control the online queue to offices in our university. Main functio
 
 # Made by
 Adil Ismailov
+
 Abdulaziz Talantbek uulu
