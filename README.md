@@ -15,6 +15,7 @@ App helps to control the online queue to offices in our university. Main functio
 ###### *App was maden by using `Intellij IDEA` and that IDE build that app automatically and libraries load by `Maven`.*
 
 ## Feedbacks
+ - https://drive.google.com/drive/folders/1YvHLthx1EZLtVKAnqxDOExDodoocktk3?usp=sharing
 
 ## Contributors
 [Adil Ismailov](https://github.com/adilism48)
